@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     # Custom apps
     'accounts',
     'core',
+    'core.apps.wardroom',
+    'core.apps.community',
 ]
 
 MIDDLEWARE = [
