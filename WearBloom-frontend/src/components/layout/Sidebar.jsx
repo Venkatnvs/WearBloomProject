@@ -1,4 +1,4 @@
-import { MainIconLogo, MainLogo } from '@/constants/Images';
+import { MainLogo } from '@/constants/Images';
 import useSidebar from '@/hooks/useSidebar';
 import { cn } from '@/lib/utils';
 import { ChevronLeft } from 'lucide-react';
@@ -27,7 +27,7 @@ const Sidebar = ({ className }) => {
           className='flex flex-row items-center space-x-0 cursor-pointer'
         >
         <img
-          src={isMinimized ? MainIconLogo : MainLogo}
+          src={MainLogo}
           alt='Logo'
           className={cn('mr-2 w-30 h-14'
             , isMinimized && 'w-10 h-8')}
