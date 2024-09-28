@@ -58,6 +58,19 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+      },
+      backgroundImage: {
+        'gradient-1': 'linear-gradient(45deg, #388e3c, #4caf50)',
+        'gradient-2': 'linear-gradient(45deg, #43a047, #66bb6a)',
+        'gradient-3': 'linear-gradient(45deg, #2e7d32, #81c784)',
+        'gradient-4': 'linear-gradient(45deg, #1b5e20, #c8e6c9)',
+      },
+      lineHeight: {
+        'default': '1.6'
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
