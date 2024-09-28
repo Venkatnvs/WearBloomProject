@@ -6,6 +6,8 @@ from .views import (
     UsageRecordDetailView,
     OutfitListView,
     OutfitDetailView,
+    OutfitDetailedListView,
+    OutfitDetail
 )
 
 urlpatterns = [
@@ -15,4 +17,6 @@ urlpatterns = [
     path('usage/<int:pk>/', UsageRecordDetailView.as_view(), name='usage-detail'),
     path('outfit/', OutfitListView.as_view(), name='outfit-list'),
     path('outfit/<int:pk>/', OutfitDetailView.as_view(), name='outfit-detail'),
+    path('outfit-detailed/', OutfitDetailedListView.as_view(), name='outfit-detailed-list'),
+    path('outfit-detail/<int:pk>/', OutfitDetail.as_view(), name='outfit-detail-2'),
 ]

@@ -1,7 +1,15 @@
 import AXIOS_INSTANCE from '../axios';
 
 export const core_wardroom_wardrobe_create = data =>
-    AXIOS_INSTANCE.post(`/core/wardroom/wardrobe/`, data);
+    AXIOS_INSTANCE.post(
+        `/core/wardroom/wardrobe/`,
+        data,
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        }
+    );
 
 export const core_wardroom_wardrobe_list = () =>
     AXIOS_INSTANCE.get(`/core/wardroom/wardrobe/`);

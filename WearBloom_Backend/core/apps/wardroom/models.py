@@ -12,11 +12,10 @@ class WARDROOM_CATEGORY_CHOICES(models.TextChoices):
     ACCESSORIES = 'Accessories', 'accessories'
 
 class WardrobeItem(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     category = models.CharField(max_length=50, choices=WARDROOM_CATEGORY_CHOICES.choices, default=WARDROOM_CATEGORY_CHOICES.TOPS)
     name = models.CharField(max_length=100)
-    description = models.TextField()
-    season = models.CharField(max_length=50)
+    description = models.TextField(null=True, blank=True)
     color = models.CharField(max_length=50)
     image = models.ImageField(upload_to='wardroom/')
     tags = models.JSONField(null=True, blank=True)
@@ -36,7 +35,7 @@ class UsageRecord(models.Model):
         return self.item.name
     
 class Outfit(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100)
     items = models.ManyToManyField(WardrobeItem)
     date = models.DateField(null=True, blank=True)

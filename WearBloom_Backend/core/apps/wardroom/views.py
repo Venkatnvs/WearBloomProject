@@ -1,7 +1,7 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from .models import WardrobeItem, UsageRecord, Outfit
-from .serializers import WardrobeItemSerializer, UsageRecordSerializer, OutfitSerializer
+from .serializers import WardrobeItemSerializer, UsageRecordSerializer, OutfitSerializer, OutfitDetailSerializer
 
 class WardrobeItemListView(generics.ListCreateAPIView):
     queryset = WardrobeItem.objects.all()
@@ -52,6 +52,22 @@ class OutfitListView(generics.ListCreateAPIView):
 class OutfitDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Outfit.objects.all()
     serializer_class = OutfitSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+    
+class OutfitDetailedListView(generics.ListAPIView):
+    queryset = Outfit.objects.all()
+    serializer_class = OutfitDetailSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+    
+class OutfitDetail(generics.RetrieveAPIView):
+    queryset = Outfit.objects.all()
+    serializer_class = OutfitDetailSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
