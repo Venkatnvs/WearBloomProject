@@ -5,6 +5,7 @@ import TextHeader from '@/components/PageHeaders/TextHeader'
 import { useToast } from '@/hooks/use-toast'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import DetailsOfOutfit from './components/DetailsOfOutfit'
 
 
 
@@ -42,9 +43,11 @@ const OutfitDetails = () => {
 
     const breadcrumbItems = [
         { title: 'Dashboard', link: '/dashboard' },
-        { title: 'Outfits', link: '/outfit' },
+        { title: 'Outfits', link: '/outfits' },
         { title: `${outfits?.name || "Outfit details"}`, link: `/outfits/${id}` },
     ];
+
+    if (!outfits) return <div>Loading...</div>
 
   return (
     <PageContainer scrollable={true}>
@@ -52,6 +55,7 @@ const OutfitDetails = () => {
         <Breadcrumbs items={breadcrumbItems} />
         <TextHeader title='Outfits'
         description='Outfit details' />
+        <DetailsOfOutfit outfit={outfits} />
       </div>
     </PageContainer>
   )

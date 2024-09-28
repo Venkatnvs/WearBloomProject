@@ -40,7 +40,7 @@ class Outfit(models.Model):
     items = models.ManyToManyField(WardrobeItem)
     date = models.DateField(null=True, blank=True)
     occasion = models.CharField(max_length=50, null=True, blank=True)
-    faviroute = models.BooleanField(default=False)
+    favorite = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.user.username} - {self.date}'
+        return f'{self.user.email} - {self.date}'
