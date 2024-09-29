@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import LandingPageNavbar from './components/LandingPageNavbar';
-import HeroSection from './components/HeroSection';
+import LandingPageNavbar from './component/LandingPageNavbar';
+import HeroSection from './component/HeroSection';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '@/store/actions/authActions';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import Footer from './components/Footer';
+import Footer from './component/Footer';
 
 const MainHome = () => {
   const { authTokens } = useSelector(state => state.auth);
