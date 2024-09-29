@@ -8,9 +8,6 @@ class ExchangeItemListView(generics.ListCreateAPIView):
     serializer_class = ExchangeItemSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
-
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
@@ -18,6 +15,3 @@ class ExchangeItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ExchangeItem.objects.all()
     serializer_class = ExchangeItemSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)

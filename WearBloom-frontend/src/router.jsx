@@ -1,3 +1,4 @@
+import CreateCommunityClothes from "./pages/Community/CreateCommunityClothes"
 import MainCommunity from "./pages/Community/MainCommunity"
 import MainDashBoard from "./pages/DashBoard/MainDashBoard"
 import MainOutfit from "./pages/Outfit/MainOutfit"
@@ -37,6 +38,11 @@ const routes = [
         name: 'community',
         path: '/community',
         element: MainCommunity,
+    },
+    {
+        name: 'community-create',
+        path: '/community/create',
+        element: CreateCommunityClothes,
     },
     {
         name: 'profile',

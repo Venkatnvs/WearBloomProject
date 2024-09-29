@@ -144,7 +144,14 @@ const DetailsDialog = ({
                       <FormLabel>Items</FormLabel>
                       <FormControl>
                         <MultiSelect
-                          options={wardrobeItems.map(item => ({ label: item.name, value: item.id })) || []}
+                          options={
+                            wardrobeItems.map(item => ({
+                              label: item.name,
+                              value: item.id,
+                              icon: item.image ? () => <img src={item.image} alt={item.name} width={20} height={20} className='mr-2 h-4 w-4 text-muted-foreground' /> : null
+                          }))
+                          || []
+                          }
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                           placeholder='Select fields...'
