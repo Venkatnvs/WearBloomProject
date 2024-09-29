@@ -6,3 +6,5 @@ django-cors-headers
 drf-yasg
 whitenoise
 pillow
+gunicorn
+dj_database_url
