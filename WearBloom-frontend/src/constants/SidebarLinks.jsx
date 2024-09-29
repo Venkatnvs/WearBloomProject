@@ -23,12 +23,12 @@ export const navItems = [
     icon: 'outfits',
     label: 'outfits',
   },
-  {
-    title: 'Usage Records',
-    href: '/usage-records',
-    icon: 'usagerecords',
-    label: 'usage-records',
-  },
+  // {
+  //   title: 'Usage Records',
+  //   href: '/usage-records',
+  //   icon: 'usagerecords',
+  //   label: 'usage-records',
+  // },
   {
     title: 'Profile',
     href: '/profile',

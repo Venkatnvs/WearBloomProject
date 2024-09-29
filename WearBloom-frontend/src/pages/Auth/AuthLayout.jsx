@@ -50,7 +50,7 @@ const AuthLayout = ({ children }) => {
           <div className='relative z-20 mt-auto'>
             <blockquote className='space-y-2'>
               <p className='text-lg'>
-                &ldquo;Water is the driving force of all nature.&rdquo;
+                &ldquo;Simplicity is the ultimate sophistication.&rdquo;
               </p>
               <footer className='text-sm'>- Leonardo da Vinci</footer>
             </blockquote>

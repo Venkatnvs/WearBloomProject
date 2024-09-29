@@ -147,7 +147,8 @@ const CommunityItemsList = () => {
             <CardHeader className='p-0'>
               <img
                 src={
-                    "http://127.0.0.1:8000" +item.item.image                }
+                    "https://wearbloomproject.onrender.com" +item.item.image
+                }
                 alt={item.item.name}
                 className='w-full h-44 object-fit px-4'
               />
